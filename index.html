@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="style.css">
+    <title>Sabby Music College</title>      
+</head>
+<body>
+    <section class = "container">
+        <header>
+            <h2>Sabby Art Institute</h2>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>            
+            </nav>
+        </header>
+        <h1>Student<span>Management</span><span>Mini App</span></h1>
+        <div class = "content">
+            <div>
+                <h2 id = "header-title">Add Student</h2>
+                <button id ="button1" class = "tombol">Show Form Add Student</button>
+                <form id = "add_student">
+                    <div>
+                        <label>
+                            Input ID
+                        </label>
+                        <input type = "text" name = "id"> 
+                    </div>
+                    <div>
+                        <label>
+                            Input Full Name
+                        </label>
+                        <input type = "text" name = "fullname"> 
+                    </div>
+                    <div class="gender">
+                        <label>Gender</label>
+                        <div>
+                            <input type = "radio" name = "male">
+                            <label>Male</label>
+                        </div>
+                        <div>
+                            <input type = "radio" name = "female">
+                            <label>
+                                Female 
+                            </label>
+                        </div>                       
+                        
+                    </div>
+                    <div class = "select">
+                        <label>Faculty</label>
+                        <select>
+                            <option>Select Faculty</option>
+                            <option>Art</option>
+                            <option>Performing Art</option>
+                            <option>Record Media Arts</option>
+                            <option>Postgraduate</option>                                                        
+                        </select>
+                        <label>Program Of Study</label>
+                        <select>
+                            <option>Select Program Of Study</option>
+                            <option>Pure Arts</option>
+                            <option>Batik and Fashion</option>
+                            <option>Interior Design</option>
+                            <option>Visual Communication Design</option>
+                            <option>Product Design</option>                                                     
+                            <option>Art Governance</option>
+
+                            <option>Dance</option>
+                            <option>Karawitan</option>                                                     
+                            <option>Music</option>                                                     
+                            <option>Mudic Education</option>                                                     
+                            <option>Music Creation</option>                                                     
+                            <option>Theater</option>                                                     
+                            <option>Ethnomusicology</option>                                                     
+                            <option>Puppertry</option>                                                     
+                            <option>Performing Arts Education</option>
+                            
+                            <option>Film and Television</option>                                                     
+                            <option>Photography</option>                                                     
+                            <option>Animations</option>
+                            
+                            <option>Master of Art Creation & Study</option>                                                     
+                            <option>Doctor of Art Creation & Studies</option>                                                     
+                            <option>Master in Art Governance</option>                                       
+                        </select>
+                    </div>
+                    <button type = "submit" class="tombol">Add</button>                    
+                </form>
+                
+              <div class = "filter">
+                  <label>Faculty</label>
+                  <select>
+                      <option>--SELECT FACULTY--</option>
+                      <option>Art</option>
+                      <option>Performing Art</option>
+                      <option>Record Media Arts</option>
+                      <option>Postgraduate</option>    
+                    </select>
+              </div>
+              <button type = "submit" class = "tombol"> Show Students</button>
+              <div class="filter2">
+                  <label>Program Of Study</label>
+                  <select>
+                    <option>--Select Program Of Study--</option>
+                    <option>Pure Arts</option>
+                    <option>Batik and Fashion</option>
+                    <option>Interior Design</option>
+                    <option>Visual Communication Design</option>
+                    <option>Product Design</option>                                                     
+                    <option>Art Governance</option>
+
+                    <option>Dance</option>
+                    <option>Karawitan</option>                                                     
+                    <option>Music</option>                                                     
+                    <option>Mudic Education</option>                                                     
+                    <option>Music Creation</option>                                                     
+                    <option>Theater</option>                                                     
+                    <option>Ethnomusicology</option>                                                     
+                    <option>Puppertry</option>                                                     
+                    <option>Performing Arts Education</option>
+                    
+                    <option>Film and Television</option>                                                     
+                    <option>Photography</option>                                                     
+                    <option>Animations</option>
+                    
+                    <option>Master of Art Creation & Study</option>                                                     
+                    <option>Doctor of Art Creation & Studies</option>                                                     
+                    <option>Master in Art Governance</option>                      
+                  </select>
+              </div>
+              <button type = "submit" class = "tombol"> Show Students</button>
+            </div>            
+        </div>
+    </section>
+    <div>
+        <h2 class="title">Our Students</h2>
+                <table id = students>
+                    <thead>
+                        <tr class = "ourstudent">
+                            <th scope ="col">Student ID (NIM) </th>
+                            <th scope ="col">Full Name </th>
+                            <th scope ="col">Faculty </th>
+                            <th scope ="col" >Program Of Study </th>
+                            <th scope ="col">Action </th>
+                        </tr>
+                    </thead>                                       
+                    <tbody id = thebodyofstudenttabledata></tbody>
+                </table> 
+    </div>
+    <footer>
+        <p>&copy;Sabby Music College</p>
+        
+    </footer>
+
+    <script src = "index.js"></script>
+</body>
+</html>

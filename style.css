@@ -1,0 +1,173 @@
+*{
+    margin : 0;
+    padding : 0;
+    /* background-color : #555;  */
+   
+}
+
+body{
+    background-color: rgb(1, 17, 37);
+}
+
+.container{
+    min-height : 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width : 100%;
+    background-color:rgb(5, 24, 53);
+    height : 50px;
+    display: flex;
+    align-items: center;
+    justify-content : space-between;
+}
+
+nav{
+    /* padding : 0 12px; */
+    width : 100px;
+    height: auto;
+    display : flex;
+    margin-right : 100px; 
+    /* color : black;  */
+       
+
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.375rem;
+    color : #fff;
+    margin : 0 10px;
+}
+
+
+h1{
+    display: flex;
+    flex-direction: column;
+    font-weight : lighter;
+    font-family : 'Cairo';
+    margin: 30px 30px 0;
+    font-size : 2rem;
+    letter-spacing : 0.1rem;
+    position : relative;
+    color : #fff;      
+}
+
+h1::after{
+    content: '';
+    position: absolute;
+    width : 100%;
+    height : 2px;
+    bottom: -7px;
+    background: #fff;
+}
+
+h2{
+    color : #fff;
+    margin-left : 10px;
+}
+
+.content
+{
+    min-height: 100%;
+    width : 100%;
+    padding : 20px;    
+}
+
+form{    
+    width : 20%;
+    height: 500px;
+    display : flex;
+    flex-direction: column; 
+      
+}
+
+form > div {
+    display : flex;
+    flex-direction: column;
+    margin : 12px 0; 
+    
+}
+
+label{
+    font-size: 1rem;
+    letter-spacing : 0.1rem;
+    width :100%;
+    color : #fff;
+}
+
+input, select{
+    width : 100%;
+    height : 20px;
+    border : 1px solid #555;   
+    background : darkgray;
+    padding : 0 10px;
+    color : black;       
+}
+
+.gender > div{
+    width : 100px;
+    height : 30px;  
+    margin : 5px 0;
+    display : flex;
+    justify-content: space-between;
+    color : #fff;
+
+}
+
+.filter{
+    width: 230px;
+    height: 40px;
+    margin : 5px 0;
+    /* display : flex; */
+    justify-content: space-between;
+          
+}
+
+.filter2{
+    width: 230px;
+    height: 40px;
+    margin : 5px 0;
+    /* display : flex; */
+    justify-content: space-between;
+    color : #fff;    
+}
+.gender > div > input{
+    padding : 0;
+    height : 13px;
+    width : 23px;
+    color : #fff;
+}
+
+.gender > div > label{
+    font-size: 0.9rem;
+    padding-left : 4px;   
+    
+}
+
+footer{
+    color : #fff; 
+}
+
+.tombol{
+    background-color : rgb(101, 158, 151);
+    color : black;
+}
+
+.ourstudent{
+    color : #fff;
+    width: 230px;
+    margin-right: 50px;
+}
+
+
+
+
+
+
+
+
+
