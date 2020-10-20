@@ -9,44 +9,73 @@ let student_data = [
         "programOfStudy" : "Pure Art"
     },
     {
-        "NIM" : "105021810002",
-        "fullName" : "Daffa Purnomo",
+        "NIM" : "105021810001",
+        "fullName" : "Dave Smith",
         "gender" : "Male",
-        "faculty" : "Record Media",
-        "programOfStudy" : "Animations"
+        "faculty" : "Art",
+        "programOfStudy" : "Pure Art"
     },
     {
         "NIM" : "105021810003",
-        "fullName" : "Kevin Sandiego",
-        "gender" : "Male",
-        "faculty" : "Performing Art",
+        "fullName" : "Siva Hadju",
+        "gender" : "Female",
+        "faculty" : "Permorming Arts",
         "programOfStudy" : "Dance"
     },
     {
-        "NIM" : "105011210001",
-        "fullName" : "Nicole Jane",
-        "gender" : "Female",
-        "faculty" : "Postgraduate",
-        "programOfStudy" : "Masters in Art Governance"
-    },
-    {
-        "NIM" : "105011810002",
-        "fullName" : "Linly Yang",
-        "gender" : "Female",
-        "faculty" : "Art",
-        "programOfStudy" : "Batik and Fashion"
-    },
-    {
-        "NIM" : "105011810004",
-        "fullName" : "Denada Syifa",
+        "NIM" : "105021810005",
+        "fullName" : "Shin Yang",
         "gender" : "Female",
         "faculty" : "Record Media",
         "programOfStudy" : "Film and Television"
     },
+    {
+        "NIM" : "105021810006",
+        "fullName" : "Fritsal John",
+        "gender" : "Male",
+        "faculty" : "Postgraduate",
+        "programOfStudy" : "Doctor of Music Creation & Studies"
+    },
+    {
+        "NIM" : "105011810002",
+        "fullName" : "Nicole Van",
+        "gender" : "Female",
+        "faculty" : "Performing Arts",
+        "programOfStudy" : "Karawitan"
+    },
+    {
+        "NIM" : "105011210003",
+        "fullName" : "Abraham Smith",
+        "gender" : "Male",
+        "faculty" : "Art",
+        "programOfStudy" : "Interior Design"
+    },
+    {
+        "NIM" : "105021710002",
+        "fullName" : "Dony Djongh",
+        "gender" : "Male",
+        "faculty" : "Art",
+        "programOfStudy" : "Product Design"
+    },
+    {
+        "NIM" : "105021910001",
+        "fullName" : "Christian Sam",
+        "gender" : "Male",
+        "faculty" : "Art",
+        "programOfStudy" : "Batik and Fashion"
+    },
+    {
+        "NIM" : "105021910001",
+        "fullName" : "Cristy Bieber",
+        "gender" : "Female",
+        "faculty" : "Performing Arts",
+        "programOfStudy" : "Music"
+    },
 ]
 
+//Clear table every refresh
 function refresh_student_table_data() {
-    //clear table every refresh
+    
     while(student_table_data.children.length > 0) {
         student_table_data.removeChild(student_table_data.children[0]);
     }
@@ -85,6 +114,7 @@ function refresh_student_table_data() {
     }
 }
 
+// Add Student Form
 function add_student() {
     let NIM = document.getElementById("form_stud_id").value;
     let fullName = document.getElementById("form_stud_name").value;
@@ -110,8 +140,22 @@ function add_student() {
     });
 
     refresh_student_table_data();
+
+    document.getElementById("form_stud_id").value = "";
+    document.getElementById("form_stud_name").value = "";
+    document.getElementById("form_stud_faculty").selectedIndex = 0;
+    document.getElementById("form_stud_programOfStudy").selectedIndex = -1;
+    
+     {
+        let form_stud_programOfStudy = document.getElementById("form_stud_programOfStudy");
+        form_stud_programOfStudy.textContent = ''; //kill all children element sadisticialy
+        form_stud_programOfStudy.appendChild((() => {let x = document.createElement("option"); x.innerText = "SELECT PROGRAM OF STUDY"; return x;})());
+        form_stud_programOfStudy.selectedIndex = 0;
+    }
+    
 }
 
+//Searching Form
 function search_student() {
     while(student_table_data.children.length > 0) {
         student_table_data.removeChild(student_table_data.children[0]);
@@ -154,6 +198,7 @@ function search_student() {
     }
 }
 
+// search by faculty
 function search_byFaculty() {
     let selectByFaculty = document.getElementById("selectByFaculty");
     selectByFaculty = selectByFaculty.options[selectByFaculty.selectedIndex];
@@ -199,6 +244,7 @@ function search_byFaculty() {
     }
 }
 
+//Filter By Program Study
 function search_byProgramOfStudy() {
     let selectByProgramOfStudy = document.getElementById("selectByProgramOfStudy");
     selectByProgramOfStudy = selectByProgramOfStudy.options[selectByProgramOfStudy.selectedIndex];
@@ -244,9 +290,10 @@ function search_byProgramOfStudy() {
     }
 }
 
+//Show and Hide Function
+
 function show_add_student_form_button() {
     let button = document.getElementById("add_student_button");
-
     if(button.innerText == "Show Form Add New Student") {
         button.innerText = "Hide Form Add New Student";
     } else if(button.innerText == "Hide Form Add New Student") {
@@ -261,39 +308,39 @@ function createListOption(value, innerHtml) {
     newOption.innerHTML = innerHtml;
 
     return newOption;
-}
+}  
 
 function form_stud_faculty_onchange() {
     let form_stud_faculty_list = document.getElementById("form_stud_faculty");
-    let form_stud_programOfStudy_list = document.getElementById("form_study_programOfStudy");
+    let form_stud_programOfStudy_list = document.getElementById("form_stud_programOfStudy");
 
     let selected_faculty = form_stud_faculty_list.options[form_stud_faculty_list.selectedIndex].text;
 
     let data_programOfStudy = [
         {
             "option" : "Art",
-            "list" : ["Pure Art", "Batik and Fashion" , "Interior Design" ,
-             "Visual Communication Design" , "Product Design" , "Art Governance"]
+            "list" : ["SELECT FACULTY","Pure Art", "Batik and Fashion" , "Interior Design" ,
+            "Visual Communication Design" , "Product Design" , "Art Governance"]
         },
         {
             "option" : "Performing Art",
-            "list" : ["Dance" , "Karawitan" , 
-            "Music" , "Music Education" , "Theater" , "Ethnomusicology" ,
-            "Pupperty" , "Performing Arts Education"]
+            "list" : ["SELECT FACULTY", "Dance" , "Karawitan" , 
+           "Music" , "Music Education" , "Theater" , "Ethnomusicology" ,
+           "Pupperty" , "Performing Arts Education"]
         },
         {
             "option" : "Record Media",
-            "list" : ["Film and Television", "Photography",
-                      "Animations"]
+            "list" : ["SELECT FACULTY", "Film and Television", "Photography",
+            "Animations"]
         },
         {
             "option" : "Postgraduate",
-            "list" : ["Master of Art Creation & Study", "Doctor of Music Creation & Studies" , "Masters in Art Governance"]
-        },
-        
+            "list" : ["SELECT FACULTY", "Master of Art Creation & Study" , "Doctor of Music Creation & Studies" , "Masters in Art Governance"]
+        }
     ];
 
-    //clear child
+
+  //clear child
     while(form_stud_programOfStudy_list.children.length > 0) {
         form_stud_programOfStudy_list.removeChild(form_stud_programOfStudy_list.children[0]);
     }
@@ -308,7 +355,3 @@ function form_stud_faculty_onchange() {
 }
 
 refresh_student_table_data();
-document.getElementById("form_stud_id").value = "";
-document.getElementById("form_stud_name").value = "";
-document.getElementById("form_stud_faculty").selectedIndex = 0;
-document.getElementById("form_stud_programOfStudy").selectedIndex = -1;
